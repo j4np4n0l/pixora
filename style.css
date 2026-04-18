@@ -1,6 +1,346 @@
 /*
 Theme Name: Pixora
 Author: Jan Panol
-Description: A custom practice theme.
+Description: Custom WordPress theme
 Version: 1.0
 */
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/inter-v20-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: bold;
+    font-weight: 700;
+    src: url('fonts/inter-v20-latin-regular.woff2') format('woff2');
+}
+
+:root {
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --color-primary: #20597E;
+    --color-secondary: #4797BC;
+    --color-accent: #64B9D8;
+    --color-white: #fcfcfc;
+    --color-black: #313131;
+    --color-text: #313131;
+    --color-link: #20597E;
+    --menu-toggle__bar: #ffffff;
+    --h1-fs-desktop: 4em;
+    --h1-fs-tablet: 3em;
+    --h1-fs-mobile: 2.2em;
+    --h2-fs-desktop: 2.8em;
+    --h2-fs-tablet: 2.3em;
+    --h2-fs-mobile: 1.8em;
+    --h3-fs-desktop: 2em;
+    --h3-fs-tablet: 1.7em;
+    --h3-fs-mobile: 1.4em;
+    --h4-fs-desktop: 1.45em;
+    --h4-fs-tablet: 1.3em;
+    --h4-fs-mobile: 1.15em;
+    --h5-fs-desktop: 1.15em;
+    --h5-fs-tablet: 1.05em;
+    --h5-fs-mobile: 1em;
+    --hover-transition: all 0.3s;
+    /* 
+	--hero-background: url("https://warszawskiul.com/wp-content/uploads/2021/09/UL_Mokotow_02-2048x1360.jpg");
+	--image-placeholder: url(https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png);
+	*/
+}
+
+body {
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    line-height: 1.4em;
+}
+
+a,
+a:visited,
+p {
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: var(--default-font-size);
+    line-height: 1.4em;
+    margin: 0 0 1em 0;
+}
+
+a,
+a:visited {
+    color: var(--color-link);
+    margin: 0;
+}
+
+a:hover {
+    color: var(--color-accent);
+    transition: 0.3s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.4em;
+    color: var(--color-primary);
+    margin: 0 0 0.5em 0;
+    overflow-wrap: break-word;
+    -webkit-hyphenate-character: "-";
+    hyphenate-character: "-";
+}
+
+h1 {
+    font-size: var(--h1-fs-desktop);
+    line-height: 1.1em;
+}
+
+h2 {
+    font-size: var(--h2-fs-desktop);
+    line-height: 1.2em;
+}
+
+h3 {
+    font-size: var(--h3-fs-desktop);
+    line-height: 1.3em;
+}
+
+h4 {
+    font-size: var(--h4-fs-desktop);
+}
+
+h5 {
+    font-size: var(--h5-fs-desktop);
+}
+
+section {
+    /*display: flex;
+	flex-direction: column;
+	justify-content: center;
+    align-items: center;*/
+    padding: 5.5em 0;
+}
+
+.row {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 90%;
+}
+
+section.gap-1,
+.row.gap-1 {
+    gap: 1em;
+}
+
+section.gap-2,
+.row.gap-2 {
+    gap: 2em;
+}
+
+section.gap-3,
+.row.gap-3 {
+    gap: 3em;
+}
+
+section.gap-4,
+.row.gap-4 {
+    gap: 4em;
+}
+
+section.gap-5,
+.row.gap-5 {
+    gap: 5em;
+}
+
+.column {
+    width: 100%;
+}
+
+.column.col-2 {
+    width: 50%;
+}
+
+.column.col-3 {
+    flex: 1
+}
+
+.column.col-4 {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.btn-container {
+    display: block;
+    margin-top: 1rem;
+}
+
+.multibtn-container {
+    display: flex;
+    margin-top: 2.5rem;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+a.btn {
+    display: block;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color-text);
+    font-weight: 500;
+    padding: 0.75em;
+    background-color: var(--color-accent);
+    border: 3px solid var(--color-accent);
+    border-radius: 3px;
+    min-width: 10em;
+}
+
+a.btn-transparent {
+    border-radius: 3px;
+    background-color: transparent;
+    backdrop-filter: blur(0.1em);
+    border: 3px solid var(--color-accent);
+}
+
+.btn-fade {
+    transition: 0.3s all;
+}
+
+.btn-fade:hover {
+    opacity: 0.85;
+}
+
+a.btn-slide {
+    box-shadow: inset 400px 0 0 0 var(--color-accent);
+    -webkit-transition: ease-out 0.3s;
+    -moz-transition: ease-out 0.3s;
+    transition: ease-out 0.3s;
+}
+
+a.btn-slide:hover {
+    background-color: transparent;
+    backdrop-filter: blur(0.1em);
+    box-shadow: inset 0 0 0 0 var(--color-accent);
+}
+
+a.btn-slide-reverse {
+    border-radius: 0px;
+    box-shadow: inset 0 0 0 0 var(--color-accent);
+    -webkit-transition: ease-out 0.3s;
+    -moz-transition: ease-out 0.3s;
+    transition: ease-out 0.3s;
+}
+
+a.btn-slide-reverse:hover {
+    box-shadow: inset 400px 0 0 0 var(--color-accent);
+}
+
+.img-container {
+    margin: 0 auto;
+}
+
+.img-container img {
+    width: 100%;
+}
+
+.img-cover {
+    display: flex;
+    justify-content: center;
+    background: var(--image-placeholder);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.img-cover img {
+    opacity: 0;
+    width: auto;
+    max-height: 500px;
+}
+
+.vertical-align {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.padding-1 {
+    padding: 1rem;
+}
+
+.padding-2 {
+    padding: 2rem;
+}
+
+.padding-3 {
+    padding: 3rem;
+}
+
+.material-icons {
+    color: var(--color-accent);
+}
+
+.material-icons.round {
+    width: fit-content;
+    border-radius: 50px;
+    background-color: var(--color-accent);
+    color: var(--color-text);
+}
+
+.material-icons.square {
+    padding: 0.75rem;
+    width: fit-content;
+    border-radius: 10px;
+    background-color: var(--color-accent);
+    color: var(--color-text);
+}
+
+.column:has(.blurb) {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-shadow {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
+    transition: 0.3s all;
+}
+
+.box-shadow.shadow:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.08);
+}
+
+#scrollToTop {
+    transform: scale(0);
+    display: block;
+    position: fixed;
+    bottom: 10vh;
+    right: 0.75vw;
+    z-index: 999;
+    transition: 1s all;
+}
+
+.scroll.icon span {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    color: var(--color-white);
+    background-color: var(--color-secondary);
+    font-size: 2em;
+    padding: 0.35rem;
+    border-radius: 50px;
+    cursor: pointer;
+}

@@ -1,0 +1,8 @@
+{
+    "editor.fontSize": 16,
+    "php.validate.executablePath": "D:\\WPLocal\\resources\\extraResources\\lightning-services\\php-8.2.29+0\\bin\\win64\\php.exe",
+    "git.enableSmartCommit": true,
+    "workbench.settings.applyToAllProfiles": [
+        "php.validate.executablePath"
+    ]
+}

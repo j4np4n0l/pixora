@@ -13,12 +13,12 @@
                     </div>
                 <?php endif; ?>
 
-                <header class="entry-header">
+                <div class="entry-header">
                     <h1><?php the_title(); ?></h1>
                     <div class="post-meta">
                         Posted on <?php echo get_the_date(); ?> by <?php the_author(); ?>
                     </div>
-                </header>
+                </div>
 
                 <div class="entry-content">
                     <?php the_content(); ?>

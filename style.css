@@ -22,14 +22,15 @@ Version: 1.0
 :root {
     --font-heading: 'Inter', sans-serif;
     --font-body: 'Inter', sans-serif;
-    --color-primary: #20597E;
-    --color-secondary: #4797BC;
+    --color-primary: #101e29;
+    --color-secondary: #1f8dbe;
     --color-accent: #64B9D8;
     --color-white: #fcfcfc;
     --color-black: #313131;
     --color-text: #313131;
     --color-link: #20597E;
     --menu-toggle__bar: #ffffff;
+    --max-width: 1280px;
     --h1-fs-desktop: 4em;
     --h1-fs-tablet: 3em;
     --h1-fs-mobile: 2.2em;
@@ -120,43 +121,39 @@ h5 {
 }
 
 section {
-    /*display: flex;
-	flex-direction: column;
-	justify-content: center;
-    align-items: center;*/
-    padding: 5.5em 0;
+    padding: 5.5rem 0;
 }
 
 .row {
     display: flex;
     margin: 0 auto;
-    max-width: 1280px;
+    max-width: var(--max-width);
     width: 90%;
 }
 
 section.gap-1,
 .row.gap-1 {
-    gap: 1em;
+    gap: 1rem;
 }
 
 section.gap-2,
 .row.gap-2 {
-    gap: 2em;
+    gap: 2rem;
 }
 
 section.gap-3,
 .row.gap-3 {
-    gap: 3em;
+    gap: 3rem;
 }
 
 section.gap-4,
 .row.gap-4 {
-    gap: 4em;
+    gap: 4rem;
 }
 
 section.gap-5,
 .row.gap-5 {
-    gap: 5em;
+    gap: 5rem;
 }
 
 .column {

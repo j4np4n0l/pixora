@@ -7,7 +7,16 @@
 </head>
 <body <?php body_class(); ?>>
     <header>
-        <h1><?php bloginfo('name'); ?></h1>
+        <div class="site-logo">
+            <?php 
+            if ( function_exists( 'the_custom_logo' ) ) {
+                the_custom_logo();
+            }
+            ?>
+        </div>
+        <?php if ( ! has_custom_logo() ) : ?>
+            <span><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo('name'); ?></a></span>
+        <?php endif; ?>
         <nav>
             <?php 
             wp_nav_menu(array(
